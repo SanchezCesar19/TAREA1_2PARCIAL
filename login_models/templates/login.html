@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Playstation</title>
+      {% load static %}
+
+    <!-- Link bloostrap desde la web-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/estilos_login.css' %}" />
+  </head>
+  <body>
+    <!-- NAVBAR LOGO Y NOMBRE-->
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'login' %}">
+          <img
+            src="{% static 'img/ps1logo.png' %}"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-blsock align-text-top"
+          />
+          Playstation Login
+        </a>
+      </div>
+    </nav>
+    <!--salto de linea-->
+    <br />
+    <br />
+    <!--salto de linea-->
+
+    <!--IMAGEN PRINCIPAL-->
+    <div style="text-align: center">
+      <img
+        src="{% static 'img/IMGPRINCIPAL.png' %}"
+        alt="Description of the image"
+        width="600"
+        height="320"
+      />
+    </div>
+    <!--IMAGEN PRINCIPAL-->
+    <br />
+    <br />
+    <!--formulario centrado-->
+    <div class="d-flex justify-content-center">
+      <form class="row">
+        <div class="">
+          <label
+            for="userinput"
+            class="form.label"
+            style="display: block; text-align: center"
+            >Usuario</label
+          >
+          <input
+            type="user"
+            class="form.control"
+            id="userinput"
+            placeholder="user"
+            style="display: block; text-align: center"
+          />
+        </div>
+      </form>
+    </div>
+    <br />
+    <div class="d-flex justify-content-center">
+      <form class="row">
+        <div class="">
+          <label
+            for="inputPass"
+            class="form.label"
+            style="display: block; text-align: center"
+            >Contraseña</label
+          >
+          <input
+            type="password"
+            class="form.control"
+            id="inputPass"
+            placeholder="password"
+            style="display: block; text-align: center"
+          />
+        </div>
+      </form>
+    </div>
+    <br />
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary">Iniciar sesion</button>
+    </div>
+  </body>
+</html>
