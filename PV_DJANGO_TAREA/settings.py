@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'PV_DJANGO_TAREA.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django',
+        'USER': 'root',
+        'PASSWORD': 'root1234',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
