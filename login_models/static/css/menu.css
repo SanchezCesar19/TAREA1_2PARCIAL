@@ -1,0 +1,98 @@
+*{
+  box-sizing: border-box;
+}
+body {
+  background: #aa4b6b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3b8d99,
+    #6b6b83,
+    #aa4b6b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3b8d99,
+    #6b6b83,
+    #aa4b6b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: 0;
+  font-family: Zrnic, sans-serif;
+  padding: 0;
+}
+.container {
+  padding: 100px;
+  padding-left: 325px;
+  padding-right: 325px;
+  padding-top: 100px;
+    min-height: calc(100vh - 40px * 2);
+  display: grid;
+  overflow: hidden;
+}
+
+.login-left {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-top: 30px;
+  background-color: white;
+  border-radius: 10px;
+  border: 5px solid black;
+}
+
+.menu{
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.h1u{
+  font-size: 40px;
+  margin-bottom: 20px;
+  padding-left: 240px;
+}
+.u{
+    font-size: 40px;
+  margin-bottom: 20px;
+  padding-left: 18px;
+}
+.h12{
+  font-size: 40px;
+  margin-bottom: 20px;
+  padding-left: 100px;
+}
+.login-form-content{
+    font-size: 30px;
+  padding-left: 10px;
+}
+.nav {
+  background: #bdc3c7;
+}
+.nav-item{
+  display: inline-block;
+}
+.nav-item:hover {
+  background: black;
+}
+
+@media (max-width: 1350px){
+  .login-left{
+    padding: 50px !important;
+  }
+  .login-form{
+    width: 100px;
+  }
+}
+@media (max-width: 768px){
+  body{
+    padding: 20px;
+  }
+  .container{
+    grid-template-columns: auto;
+  }
+  .login-right{
+    display: none;
+  }
+}

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% load static %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" href="{% static 'img/ps1logo.png' %}">
     <title>Login Playstation</title>
-      {% load static %}
-
     <!-- Link bloostrap desde la web-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -14,30 +14,40 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{% static 'css/estilos_login.css' %}" />
+      <!-- Link css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos_login.css' %}"
+    />
+    <!--ajustar una imagen al tamaño de la ventana-->
+    <!--ajustar una imagen al tamaño de la ventana-->
   </head>
+
+
+
+
+  <!-- cuerpo-->
   <body>
-    <!-- NAVBAR LOGO Y NOMBRE-->
-    <nav class="navbar bg-light">
+  <!-- NAVBAR LOGO Y NOMBRE-->
+    <nav class="navbar bg-black">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'login' %}">
           <img
-            src="{% static 'img/ps1logo.png' %}"
+            src="{% static 'img/SONY-LOGO-NAVBAR.png' %}"
             alt="Logo"
-            width="30"
-            height="24"
-            class="d-inline-blsock align-text-top"
+            width="110"
+            height="17.5"
+            class="imgva"
           />
-          Playstation Login
+
         </a>
       </div>
     </nav>
-    <!--salto de linea-->
-    <br />
-    <br />
+  <!-- NAVBAR LOGO Y NOMBRE-->
+
     <!--salto de linea-->
 
-    <!--IMAGEN PRINCIPAL-->
+    <!--salto de linea-->
+
+    <!--IMAGEN PRINCIPAL
     <div style="text-align: center">
       <img
         src="{% static 'img/IMGPRINCIPAL.png' %}"
@@ -46,52 +56,70 @@
         height="320"
       />
     </div>
-    <!--IMAGEN PRINCIPAL-->
-    <br />
-    <br />
-    <!--formulario centrado-->
-    <div class="d-flex justify-content-center">
-      <form class="row">
-        <div class="">
-          <label
-            for="userinput"
-            class="form.label"
-            style="display: block; text-align: center"
-            >Usuario</label
-          >
-          <input
-            type="user"
-            class="form.control"
-            id="userinput"
-            placeholder="user"
-            style="display: block; text-align: center"
-          />
+    IMAGEN PRINCIPAL-->
+
+  <!--NAVBAR 2-->
+  <ul class="nav nav-tabs" >
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="">Sign Up</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://github.com/SanchezCesar19" style="color: white">Perfil GitHub</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://github.com/SanchezCesar19/TAREA1_2PARCIAL.git" style="color: white">Repositorio del proyecto</a>
+    </li>
+  </ul>
+  <!--NAVBAR 2-->
+    <!--salto de linea-->
+
+    <!--salto de linea-->
+
+
+    <!--FORMULARIO LOGIN-->
+        <!--DIV PRINCIPAL DEL FORMULARIO-->
+    <div class="container">
+        <div class="login-left">
+            <div class="login-header">
+                <h1>-Bievenido a Playstation-</h1>
+                <p>-Porfavor ingresa tu usuario-</p>
+            </div>
+            <form class="login-form" method="POST" action="/loginAction/">
+            {% csrf_token %}
+                <h1 class="errorusu">{{ err }}</h1>
+                <div class="login-form-content">
+                    <div class="form-item">
+                                <label for="usuario">
+                                    Usuario:
+                                </label>
+                                <!-- CAJA DE TEXTO DONDE INGRESAMOS EL USUARIO-->
+                                <input type="text" id="email" name="usu"
+                                       placeholder="Usuario" required="required">
+                    </div>
+                    <div class="form-item">
+                                <label for="password">
+                                    Contraseña:
+                                </label>
+                            <!-- CAJA DE TEXTO DONDE INGRESAMOS EL USUARIO-->
+                                <input type="password" name="pass"
+                                       placeholder="Contraseña" required="required">
+                    </div>
+                            <!-- CUADRO MARCADO RECORDAR CONTRASEñA-->
+                    <div class="form-item">
+                        <div class="checkbox">
+                                    <input type="checkbox" id="remeberMeCheckbox" checked >
+                                    <label for="remeberMeCheckbox" id="checkboxlabel">
+                                        Recordar mi contraseña
+                                    </label>
+                        </div>
+                    </div>
+                    <button type="submit">Ingresar</button>
+                </div>
+            </form>
         </div>
-      </form>
-    </div>
-    <br />
-    <div class="d-flex justify-content-center">
-      <form class="row">
-        <div class="">
-          <label
-            for="inputPass"
-            class="form.label"
-            style="display: block; text-align: center"
-            >Contraseña</label
-          >
-          <input
-            type="password"
-            class="form.control"
-            id="inputPass"
-            placeholder="password"
-            style="display: block; text-align: center"
-          />
+        <div class="login-right">
+                <img class="imglogin" src="{% static 'img/IMG-LOGIN.jpg' %}">
         </div>
-      </form>
-    </div>
-    <br />
-    <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-primary">Iniciar sesion</button>
     </div>
   </body>
 </html>

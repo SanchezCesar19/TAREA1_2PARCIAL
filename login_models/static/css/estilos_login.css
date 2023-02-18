@@ -1,5 +1,7 @@
+*{
+  box-sizing: border-box;
+}
 body {
-  font-family: Zrnic;
   background: #aa4b6b; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -13,4 +15,143 @@ body {
     #6b6b83,
     #aa4b6b
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: 0;
+  font-family: Zrnic, sans-serif;
+  padding: 0;
+}
+.container {
+  padding: 40px;
+  min-height: calc(100vh - 40px * 2);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  overflow: hidden;
+}
+
+.login-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+  background-color: white;
+  border-radius: 10px;
+  border: 5px solid black;
+}
+
+.login-right{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+  border-radius: 10px;
+  border: 5px solid white;
+}
+
+.imglogin{
+  width: 600px;
+  height: 600px;
+  max-width: 100%;
+}
+
+.login-head{
+  margin-bottom: 50px;
+}
+h1{
+  font-size: 40px;
+  margin-bottom: 20px;
+  padding-left: 35px;
+}
+
+p{
+  opacity: .7;
+  padding-left: 120px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.login-form{
+  width: 450px;
+}
+
+.form-item label:not(.checkboxlabel){
+  display: inline-block;
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  font-size: 20px;
+}
+input[type='text'],
+input[type='password']{
+  border: 1px solid black;
+  height: 55px;
+  padding: 0 2rem;
+  width: 100%;
+  outline: none;
+  transition: background .5s;
+  font-size: 18px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.checkbox{
+  display:flex ;
+  align-items: center;
+  gap: 7px;
+}
+
+input[type='checkbox']{
+  width: 20px;
+  height: 20px;
+  accent-color: red;
+  margin-bottom: 10px;
+}
+
+button{
+  border: none;
+  background: linear-gradient(45deg, #aa4b6b,#6b6b83,#3b8d99);
+  color: white;
+  padding: 1rem;
+  border-radius: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  height: 55px;
+  cursor: pointer;
+  width: 100%;
+
+}
+.errorusu{
+    font-size: 20px;
+    padding-left: 97px;
+  margin-bottom: 10px;
+  color: #ec2F4B;
+}
+
+.nav {
+  background: #bdc3c7;
+}
+.nav-item{
+  display: inline-block;
+}
+.nav-item:hover {
+  background: black;
+}
+
+@media (max-width: 1350px){
+  .login-left{
+    padding: 50px !important;
+  }
+  .login-form{
+    width: 100px;
+  }
+}
+@media (max-width: 768px){
+  body{
+    padding: 20px;
+  }
+  .container{
+    grid-template-columns: auto;
+  }
+  .login-right{
+    display: none;
+  }
 }

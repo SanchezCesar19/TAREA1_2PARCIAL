@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <!-- Link bloostrap desde la web-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}" />
+  </head>
+  <body>
+    <!-- NAVBAR LOGO Y NOMBRE-->
+    <nav class="navbar bg-black">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'login' %}">
+          <img
+            src="{% static 'img/SONY-LOGO-NAVBAR.png' %}"
+            alt="Logo"
+            width="110"
+            height="17.5"
+            class="imgva"
+          />
+
+        </a>
+      </div>
+    </nav>
+  <!-- NAVBAR LOGO Y NOMBRE-->
+
+    <!--salto de linea-->
+
+    <!--salto de linea-->
+
+    <!--IMAGEN PRINCIPAL
+    <div style="text-align: center">
+      <img
+        src="{% static 'img/IMGPRINCIPAL.png' %}"
+        alt="Description of the image"
+        width="600"
+        height="320"
+      />
+    </div>
+    IMAGEN PRINCIPAL-->
+
+  <!--NAVBAR 2-->
+  <ul class="nav nav-tabs" >
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://github.com/SanchezCesar19" style="color: white">Perfil GitHub</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://github.com/SanchezCesar19/TAREA1_2PARCIAL.git" style="color: white">Repositorio del proyecto</a>
+    </li>
+  </ul>
+  <!--NAVBAR 2-->
+    <div class="container">
+        <div class="login-left">
+            <div class="login-header">
+                <h1>-Bievenido a tu cuenta de Playstation-</h1>
+            </div>
+            <div class="menu">
+                <img src="{% static 'img/logo-usuario-menu1.png' %}">
+            </div>
+    <h1 class="h1u">
+        Usuario
+        <br>
+        <div class="u">
+            {{ usuariostr }}
+        </div>
+    </h1>
+    <h1 class="h12">
+        Informacion del usuario
+    </h1>
+            <div class="login-form-content">
+                    <ul>
+                        {% for trabajadorRegistro in list %}
+                            <li>{{ trabajadorRegistro.ci }}
+                                {{ trabajadorRegistro.nombre }}
+                                {{ trabajadorRegistro.apellido }}
+                                {{ trabajadorRegistro.direccion }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+  </body>
+</html>
